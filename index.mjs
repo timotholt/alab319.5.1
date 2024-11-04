@@ -13,13 +13,6 @@ app.get("/", (req, res) => {
   res.send("Welcome to the API.");
 });
 
-// Connect to MongoDB
-mongoose.connect(process.env.ATLAS_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useCreateIndex: true,
-});
-
 const db = mongoose.connection;
 
 db.on("error", (err) => console.error(err));

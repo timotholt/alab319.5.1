@@ -1,8 +1,10 @@
 import mongoose from "mongoose";
 import "dotenv/config";
 
-mongoose.connect(process.env.ATLAS_URI, { useNewUrlParser: true, useUnifiedTopology: true });
+// Get rid of those annoying warnings
+mongoose.connect(process.env.ATLAS_URI); //, { useNewUrlParser: true, useUnifiedTopology: true });
 
+// Connect to mongoose!
 const db = mongoose.connection;
 
 db.on("error", console.error.bind(console, "connection error:"));
